@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anita Langue | Técnica de Informática CV4</title>
+    <!-- Carregamento do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonte Inter e JetBrains Mono para detalhes técnicos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#09090d',
+                        card: '#111118',
+                        cardHover: '#161621',
+                        violetMain: '#c419e6',
+                        violetNeon: '#b514ff',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-obsidian text-zinc-100 font-sans antialiased selection:bg-violetMain selection:text-white overflow-x-hidden relative">
+
+    <!-- Efeitos de brilho radial no fundo -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-violetMain/15 rounded-full blur-[128px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-80 h-80 bg-violetNeon/10 rounded-full blur-[128px] pointer-events-none -z-10"></div>
+
+    <!-- Faixas esportivas néon no topo -->
+    <div class="flex justify-center gap-2 h-1.5 bg-obsidian">
+        <span class="w-32 h-full bg-violetMain shadow-[0_0_12px_#b514ff] rounded-b"></span>
+        <span class="w-32 h-full bg-violetNeon shadow-[0_0_12px_#b514ff] rounded-b"></span>
+    </div>
+
+    <!-- Cabeçalho Glassmorphism Fixo -->
+    <header class="sticky top-0 z-50 bg-obsidian/80 backdrop-blur-md border-b border-violetMain/25">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logótipo -->
+            <a href="#inicio" class="text-xl font-extrabold tracking-tight flex items-center gap-1.5 group">
+                <span class="w-2.5 h-2.5 rounded-full bg-violetNeon group-hover:animate-ping"></span>
+                <span>Anita<span class="text-violetMain font-mono">.CV4</span></span>
+            </a>
+
+            <!-- Botão Menu Mobile -->
+            <button id="btn-menu" aria-label="Abrir Menu" class="md:hidden p-2.5 rounded-xl border border-violetMain/40 text-violetMain hover:bg-violetMain/10 transition-colors focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Links de Navegação Desktop -->
+            <nav class="hidden md:block">
+                <ul class="flex items-center gap-8 text-sm font-medium text-zinc-300">
+                    <li><a href="#inicio" class="hover:text-violetNeon transition-colors">Início</a></li>
+                    <li><a href="#sobre" class="hover:text-violetNeon transition-colors">Sobre Mim</a></li>
+                    <li><a href="#habilidades" class="hover:text-violetNeon transition-colors">Habilidades</a></li>
+                    <li><a href="#projetos" class="hover:text-violetNeon transition-colors">Projetos</a></li>
+                    <li>
+                        <a href="#contacto" class="px-4 py-2 rounded-xl bg-violetMain/15 border border-violetMain/50 text-violetNeon hover:bg-violetMain hover:text-white transition-all font-semibold">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="menu-lista" class="hidden md:hidden bg-card/95 backdrop-blur-xl border-b border-violetMain/30 px-6 py-4">
+            <ul class="flex flex-col space-y-3 text-base font-medium">
+                <li><a href="#inicio" class="block py-2 text-zinc-200 hover:text-violetNeon">Início</a></li>
+                <li><a href="#sobre" class="block py-2 text-zinc-200 hover:text-violetNeon">Sobre Mim</a></li>
+                <li><a href="#habilidades" class="block py-2 text-zinc-200 hover:text-violetNeon">Habilidades</a></li>
+                <li><a href="#projetos" class="block py-2 text-zinc-200 hover:text-violetNeon">Projetos</a></li>
+                <li><a href="#contacto" class="block py-2 text-violetNeon font-semibold">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal (Tag <main> devidamente aberta e fechada) -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12 md:py-20">
+
+        <!-- =========================================================
+             1. SECÇÃO HERO (SPLIT-SCREEN ASSIMÉTRICO)
+        ========================================================= -->
+        <section id="inicio" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-4">
+            <!-- Coluna Esquerda: Apresentação -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <!-- Badges de Status e Certificação -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-violetMain/15 text-violetNeon border border-violetMain/40">
+                        Técnica de Informática • Nível CV4
+                    </span>
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-900 text-zinc-300 border border-zinc-800">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Disponível para oportunidades
+                    </span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Olá, eu sou <br class="hidden sm:inline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-violetMain via-violetNeon to-fuchsia-400">
+                        Anita
+                    </span>
+                </h1>
+
+                <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Técnico formado no Certificado Vocacional 4 (CV4), com conhecimentos práticos em 
+                    manutenção de computadores, redes básicas, suporte técnico e criação de páginas web.
+                </p>
+
+                <!-- Botões de Ação -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#projetos" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-violetMain to-violetNeon text-white font-semibold shadow-[0_0_25px_rgba(196,25,230,0.4)] hover:shadow-[0_0_35px_rgba(181,20,255,0.65)] hover:-translate-y-0.5 transition-all">
+                        Ver Meus Trabalhos
+                    </a>
+                    <a href="#contacto" class="px-6 py-3.5 rounded-xl bg-card border border-violetMain/40 text-zinc-100 font-semibold hover:bg-violetMain/10 hover:border-violetNeon transition-all">
+                        Fala Comigo
+                    </a>
+                </div>
+
+                <!-- Pequena barra estilo terminal -->
+                <div class="pt-4 max-w-md mx-auto lg:mx-0">
+                    <div class="bg-card/90 border border-zinc-800 rounded-xl p-3 font-mono text-xs text-zinc-400 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-violetNeon font-bold">❯</span>
+                            <span>anita@cv4-maputo:~$</span>
+                            <span class="text-zinc-200">status --ready</span>
+                        </div>
+                        <span class="text-violetMain text-[10px] uppercase tracking-wider">Online</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Moldura Geométrica / Duplo Anel com Foto -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative group">
+                    <!-- Brilho exterior -->
+                    <div class="absolute -inset-1.5 bg-gradient-to-tr from-violetMain via-violetNeon to-fuchsia-500 rounded-3xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
+                    
+                    <!-- Cartão Moldura -->
+                    <div class="relative bg-card border border-violetMain/40 rounded-3xl p-6 sm:p-8 flex flex-col items-center">
+                        <!-- Anel duplo à volta da imagem -->
+                        <div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full p-2 border-2 border-dashed border-violetMain/60 flex items-center justify-center">
+                            <div class="w-full h-full rounded-full overflow-hidden border-2 border-violetNeon bg-obsidian flex items-center justify-center shadow-[0_0_30px_rgba(196,25,230,0.3)]">
+                                <img 
+                                    src="minha-foto.jpg" 
+                                    alt="Anita Imagem" 
+                                    class="w-full h-full object-cover"
+                                    onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';"
+                                >
+                                <!-- Fallback estilizado caso 'minha-foto.jpg' não carregue -->
+                                <div id="avatar-fallback" class="hidden w-full h-full flex-col items-center justify-center bg-gradient-to-br from-card to-obsidian text-center">
+                                    <span class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violetMain to-violetNeon">AL</span>
+                                    <span class="text-xs font-mono text-zinc-400 mt-1 tracking-widest">CV4 TECH</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etiqueta inferior do cartão -->
+                        <div class="mt-6 text-center">
+                            <p class="font-bold text-lg text-zinc-100">Anita Jorge Langue</p>
+                            <p class="text-xs font-mono text-violetNeon mt-0.5">Maputo • Moçambique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             2. SECÇÃO SOBRE MIM (LAYOUT BENTO 2 COLUNAS)
+        ========================================================= -->
+        <section id="sobre" class="scroll-mt-24">
+            <div class="mb-8">
+                <span class="text-xs font-mono uppercase tracking-widest text-violetNeon">01 // Perfil</span>
+                <h2 class="text-3xl font-bold text-zinc-100 mt-1">Sobre Mim</h2>
+                <p class="text-zinc-400 mt-1">Resumo da minha formação técnica e objetivos profissionais.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Cartão de Biografia (Esquerda) -->
+                <div class="lg:col-span-6 bg-card border border-violetMain/25 hover:border-violetMain/60 rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all">
+                    <div class="space-y-4 text-zinc-300 leading-relaxed">
+                        <p>
+                            Sou uma técnica de informática dedicada, com formação de nível <strong class="text-violetNeon font-semibold">CV4</strong>. 
+                            Tenho facilidade em diagnosticar problemas técnicos, montar e configurar equipamentos.
+                        </p>
+                        <p>
+                            Procuro sempre manter-me atualizado nas ferramentas 
+                            de tecnologia para oferecer soluções eficientes no futuro.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zinc-800/80 flex items-center gap-3 text-xs font-mono text-zinc-400">
+                        <span class="w-2 h-2 rounded-full bg-violetMain"></span>
+                        <span>Foco em Hardware, Redes & Web</span>
+                    </div>
+                </div>
+
+                <!-- Grelha 2x2 de Metadados (Direita) -->
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-card border border-violetMain/25 hover:border-violetNeon/60 rounded-2xl p-5 flex flex-col justify-center transition-all">
+                        <span class="text-xs font-mono text-violetMain uppercase tracking-wider mb-1">Nome</span>
+                        <p class="text-base font-bold text-zinc-100">Anita Jorge Langue</p>
+                    </div>
+
+                    <div class="bg-card border border-violetMain/25 hover:border-violetNeon/60 rounded-2xl p-5 flex flex-col justify-center transition-all">
+                        <span class="text-xs font-mono text-violetMain uppercase tracking-wider mb-1">Qualificação</span>
+                        <p class="text-base font-bold text-zinc-100">Certificado Vocacional 4 (CV4)</p>
+                    </div>
+
+                    <div class="bg-card border border-violetMain/25 hover:border-violetNeon/60 rounded-2xl p-5 flex flex-col justify-center transition-all">
+                        <span class="text-xs font-mono text-violetMain uppercase tracking-wider mb-1">Área</span>
+                        <p class="text-base font-bold text-zinc-100">Tecnologias de Informação</p>
+                    </div>
+
+                    <div class="bg-card border border-violetMain/25 hover:border-violetNeon/60 rounded-2xl p-5 flex flex-col justify-center transition-all">
+                        <span class="text-xs font-mono text-violetMain uppercase tracking-wider mb-1">Localização</span>
+                        <p class="text-base font-bold text-zinc-100">Maputo-Moçambique</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3. COMPETÊNCIAS TÉCNICAS (GRELHA DE 4 CARTÕES COM ÍCONES SVG)
+        ========================================================= -->
+        <section id="habilidades" class="scroll-mt-24">
+            <div class="mb-8">
+                <span class="text-xs font-mono uppercase tracking-widest text-violetNeon">02 // Stack & Ferramentas</span>
+                <h2 class="text-3xl font-bold text-zinc-100 mt-1">Competências Técnicas</h2>
+                <p class="text-zinc-400 mt-1">Áreas principais de atuação adquiridas na formação CV4.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cartão 1: Hardware -->
+                <div class="group bg-card hover:bg-cardHover border border-violetMain/25 hover:border-violetNeon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-violetMain/15 border border-violetMain/30 flex items-center justify-center text-violetNeon mb-5 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-violetNeon transition-colors mb-2">Manutenção de Hardware</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Montagem, limpeza, diagnóstico de avarias.</p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-zinc-800/80 flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">Diagnóstico</span>
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">Montagem</span>
+                    </div>
+                </div>
+
+                <!-- Cartão 2: Redes Básicas -->
+                <div class="group bg-card hover:bg-cardHover border border-violetMain/25 hover:border-violetNeon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-violetMain/15 border border-violetMain/30 flex items-center justify-center text-violetNeon mb-5 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-violetNeon transition-colors mb-2">Redes Básicas</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Crimpagem de cabos RJ45, configuração de routers, partilha de ficheiros e endereçamento IP.</p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-zinc-800/80 flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">RJ45</span>
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">TCP/IP</span>
+                    </div>
+                </div>
+
+                <!-- Cartão 3: Desenvolvimento Web -->
+                <div class="group bg-card hover:bg-cardHover border border-violetMain/25 hover:border-violetNeon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-violetMain/15 border border-violetMain/30 flex items-center justify-center text-violetNeon mb-5 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-violetNeon transition-colors mb-2">Desenvolvimento Web</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Criação de páginas web responsivas utilizando HTML3, CSS e JavaScript básico.</p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-zinc-800/80 flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">HTML/CSS</span>
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Cartão 4: Suporte Técnico & SO -->
+                <div class="group bg-card hover:bg-cardHover border border-violetMain/25 hover:border-violetNeon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-violetMain/15 border border-violetMain/30 flex items-center justify-center text-violetNeon mb-5 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-violetNeon transition-colors mb-2">Suporte Técnico & SO</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Instalação e configuração de sistemas operativos Windows/Linux, drivers e pacotes Office.</p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-zinc-800/80 flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">Windows/Linux</span>
+                        <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-obsidian text-zinc-300 border border-zinc-800">Office</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             4. PROJETOS PRÁTICOS (BENTO SHOWCASE)
+        ========================================================= -->
+        <section id="projetos" class="scroll-mt-24">
+            <div class="mb-8">
+                <span class="text-xs font-mono uppercase tracking-widest text-violetNeon">03 // Portfólio</span>
+                <h2 class="text-3xl font-bold text-zinc-100 mt-1">Projetos</h2>
+                <p class="text-zinc-400 mt-1">Exemplos de atividades e projetos desenvolvidos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Projeto 1 -->
+                <article class="group bg-card hover:bg-cardHover border border-violetMain/25 hover:border-violetNeon rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violetMain/10 rounded-bl-full -z-0"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-violetMain/15 text-violetNeon border border-violetMain/30">Web Design</span>
+                            <span class="text-xs font-mono text-zinc-500">#01</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-100 group-hover:text-violetNeon transition-colors mb-3">
+                            Portfólio Pessoal Web
+                        </h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Site criado directamente com HTML semântico, CSS puro com variáveis de cores e 
+                            JavaScript simples para navegação responsiva.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zinc-800/80 flex items-center text-xs font-mono text-violetMain">
+                        <span>HTML5 • CSS • JS</span>
+                    </div>
+                </article>
+
+                <!-- Projeto 2 -->
+                <article class="group bg-card hover:bg-cardHover border border-violetMain/25 hover:border-violetNeon rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violetMain/10 rounded-bl-full -z-0"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-violetMain/15 text-violetNeon border border-violetMain/30">Infraestrutura</span>
+                            <span class="text-xs font-mono text-zinc-500">#02</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-100 group-hover:text-violetNeon transition-colors mb-3">
+                            Configuração de Rede Local (LAN)
+                        </h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Projeto prático de laboratório envolvendo cabeamento estruturado, ligação de switch 
+                            e configuração de acesso à internet para várias máquinas.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zinc-800/80 flex items-center text-xs font-mono text-violetMain">
+                        <span>Switch • Cabeamento • IP</span>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 -->
+                <article class="group bg-card hover:bg-cardHover border border-violetMain/25 hover:border-violetNeon rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violetMain/10 rounded-bl-full -z-0"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-violetMain/15 text-violetNeon border border-violetMain/30">Manutenção</span>
+                            <span class="text-xs font-mono text-zinc-500">#03</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-100 group-hover:text-violetNeon transition-colors mb-3">
+                            Otimização de Computadores
+                        </h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Formatacao Backup de dados e instalação de software essencial para 
+                            melhorar o desempenho de máquinas antigas.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zinc-800/80 flex items-center text-xs font-mono text-violetMain">
+                        <span>Backup • SO • Performance</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             5. SECÇÃO CONTACTO (SPLIT DUAS COLUNAS)
+        ========================================================= -->
+        <section id="contacto" class="scroll-mt-24">
+            <div class="mb-8">
+                <span class="text-xs font-mono uppercase tracking-widest text-violetNeon">04 // Comunicação</span>
+                <h2 class="text-3xl font-bold text-zinc-100 mt-1">Contacto</h2>
+                <p class="text-zinc-400 mt-1">Envie uma mensagem direta através do formulário abaixo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Cartão de Informação Direta (Esquerda) -->
+                <div class="lg:col-span-5 bg-card border border-violetMain/25 rounded-2xl p-6 sm:p-8 space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-zinc-100">Vamos conversar!</h3>
+                        <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
+                            Estou disponível para estágios, suporte técnico, manutenção de equipamentos e desenvolvimento de projetos web.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-violetMain/15 border border-violetMain/30 flex items-center justify-center text-violetNeon shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono text-zinc-400 uppercase">Localização</p>
+                                <p class="text-sm font-semibold text-zinc-100">Maputo - Moçambique</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-violetMain/15 border border-violetMain/30 flex items-center justify-center text-violetNeon shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono text-zinc-400 uppercase">Qualificação</p>
+                                <p class="text-sm font-semibold text-zinc-100">Certificado Vocacional 4 (CV4)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário Interativo (Direita) -->
+                <form id="form-contacto" class="lg:col-span-7 bg-card border border-violetMain/25 rounded-2xl p-6 sm:p-8 space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="nome" class="block text-sm font-semibold text-zinc-200 mb-2">Seu Nome:</label>
+                            <input 
+                                type="text" 
+                                id="nome" 
+                                name="nome" 
+                                placeholder="Digite o seu nome" 
+                                required
+                                class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-violetNeon focus:ring-1 focus:ring-violetNeon transition-colors"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-zinc-200 mb-2">Seu Email:</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="exemplo@email.com" 
+                                required
+                                class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-violetNeon focus:ring-1 focus:ring-violetNeon transition-colors"
+                            >
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="mensagem" class="block text-sm font-semibold text-zinc-200 mb-2">Mensagem:</label>
+                        <textarea 
+                            id="mensagem" 
+                            name="mensagem" 
+                            rows="4" 
+                            placeholder="Escreva a sua mensagem..." 
+                            required
+                            class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-violetNeon focus:ring-1 focus:ring-violetNeon transition-colors resize-y"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-violetMain to-violetNeon text-white font-semibold shadow-[0_0_20px_rgba(196,25,230,0.35)] hover:shadow-[0_0_30px_rgba(181,20,255,0.6)] transition-all cursor-pointer">
+                        Enviar
+                    </button>
+
+                    <!-- Mensagem de confirmação exibida pelo JavaScript -->
+                    <div id="resposta-form" class="hidden mt-4 p-4 rounded-xl bg-violetMain/15 border border-violetNeon text-violetNeon font-semibold text-sm"></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         RODAPÉ
+    ========================================================= -->
+    <footer class="bg-card/60 border-t border-violetMain/25 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-400">
+            <p>© 2026 <span class="text-violetNeon font-bold">Anita Langue</span> • Técnico de Informática CV4. Todos os direitos reservados.</p>
+            <span class="font-mono text-xs text-zinc-500">Maputo, Moçambique</span>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         JAVASCRIPT VANILLA (MENU MOBILE E FORMULÁRIO)
+    ========================================================= -->
+    <script>
+        // 1. Abrir e fechar o menu no telemóvel
+        const btnMenu = document.getElementById('btn-menu');
+        const menuLista = document.getElementById('menu-lista');
+
+        btnMenu.addEventListener('click', function () {
+            menuLista.classList.toggle('hidden');
+        });
+
+        // Fechar o menu no telemóvel ao clicar num link
+        const linksMenu = menuLista.querySelectorAll('a');
+        linksMenu.forEach(function (link) {
+            link.addEventListener('click', function () {
+                menuLista.classList.add('hidden');
+            });
+        });
+
+        // 2. Simulação simples de envio do formulário de contacto
+        const formContacto = document.getElementById('form-contacto');
+        const respostaForm = document.getElementById('resposta-form');
+
+        formContacto.addEventListener('submit', function (evento) {
+            evento.preventDefault(); // Evita recarregar a página
+
+            const nome = document.getElementById('nome').value;
+
+            respostaForm.textContent = 'Obrigado, ' + nome + '! A sua mensagem foi registada com sucesso.';
+            respostaForm.classList.remove('hidden');
+
+            formContacto.reset(); // Limpa os campos do formulário
+        });
+    </script>
+
+</body>
+</html>
